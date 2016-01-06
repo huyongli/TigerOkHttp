@@ -19,8 +19,8 @@ public class TigerJsonRequest<T> extends TigerRequest<T> {
 	/**
 	 * 结果解析器
 	 */
-	protected TigerJsonParser<T> jsonParser;
-	
+	protected TigerParser<T> dataParser;
+
 	public TigerJsonRequest(String url) {
 		super(url);
 	}
@@ -47,10 +47,20 @@ public class TigerJsonRequest<T> extends TigerRequest<T> {
 
 	@Override
 	public TigerParser<T> getDataParser() {
-		if(jsonParser == null) {
-			jsonParser = new TigerJsonParser<T>(this, resultType);
+		if(dataParser == null) {
+			dataParser = new TigerJsonParser<T>(this, resultType);
 		}
-		return jsonParser;
+		return dataParser;
 	}
 
+	/**
+	 * 设置结果解析器
+	 * @param dataParser
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public <S extends TigerJsonRequest<T>> S setDataParser(TigerParser<T> dataParser) {
+		this.dataParser = dataParser;
+		return (S) this;
+	}
 }
