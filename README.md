@@ -18,7 +18,72 @@
 
 7.支持对返回结果结构的自定义，例如设置返回结果结构为：{flag：1|0，error：错误信息，result：请求结果}，结果解析的时候会按照此结构进行结果解析
 
-8.支持取消某个请求
+8.支持取消某个请求<br/>
 
 
-此框架的具体用法请参考我的文章[基于OkHttp的封装库TigerOkHttp的使用](http://ittiger.cn/?p=304)
+使用举例：
+<br/>
+1.异步Get请求如下<br/>
+
+```
+//根据请求URL构造请求对象，请求成功直接返回结果为Model集合
+TigerJsonRequest<List<Model>> request = new TigerJsonRequest<List<Model>>(URL);
+//添加三个请求参数
+request.addParam("value", "异步get请求-返回List<Model>")
+.addParam("isModel", true)
+.addParam("isList", true)
+.setRequestCallback(new RequestCallback<List<Model>>() {//设置异步请求回调
+    @Override
+    public void onSuccess(List<Model>result) {
+        showResult(result.toString());
+    }
+ 
+    @Override
+    public void onFailure(TigerHttpException e) {
+        showResult(e.getMessage());
+    }
+});
+//开始异步请求
+TigerOkHttp.getAsync(request);
+```
+
+2.上传文件请求如下：<br/>
+```
+//根据上传请求地址和文件路径构造文件上传请求对象
+TigerUploadRequest<String> request = new TigerUploadRequest<String>(url, filePath);
+//设置上传回调监听 
+request.setRequestCallback(
+     new RequestCallback<String>() {
+         @Override
+         public void onPreExecute() {
+             super.onPreExecute();
+             //此处可以初始化显示上传进度UI
+         }
+ 
+         @Override
+         public void onSuccess(String result) {
+             //文件上传成功
+         }
+ 
+         @Override
+         public void onLoading(long count, long current) {
+             super.onLoading(count, current);
+             //此处可以更新上传进度
+         }
+ 
+         @Override
+         public void onFailure(TigerHttpException e) {
+             //文件上传失败
+         }
+ 
+         @Override
+         public void onAfterExecute() {
+             super.onAfterExecute();
+             //此处可以隐藏上传进度条
+         }
+ });
+ //发起上传操作
+ TigerOkHttp.postAsync(request);
+```
+
+此框架的其他具体用法请参考我的文章[基于OkHttp的封装库TigerOkHttp的使用](http://ittiger.cn/?p=304)
