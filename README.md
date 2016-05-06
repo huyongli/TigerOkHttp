@@ -1,6 +1,9 @@
 # [TigerOkHttp](http://ittiger.cn/?p=304)
 此框架是基于OkHttp的基础上进行封装的，其简化了OkHttp请求的写法，同时添加了一些其他的实用功能，使其更适用于具体的项目。
 不熟悉OkHttp用法的同学请参考我的文章[Android中OkHttp的使用](http://ittiger.cn/?p=300)
+<br/>
+此框架的具体用法请参考我的文章[基于OkHttp的封装库TigerOkHttp的使用](http://ittiger.cn/?p=304)
+<br/><br/>
 
 该框架主要支持的特性包括如下几点：
 
@@ -86,4 +89,4 @@ request.setRequestCallback(
  TigerOkHttp.postAsync(request);
 ```
 
-此框架的其他具体用法请参考我的文章[基于OkHttp的封装库TigerOkHttp的使用](http://ittiger.cn/?p=304)
+
