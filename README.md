@@ -1,8 +1,8 @@
-# [TigerOkHttp](http://ittiger.cn/?p=304)
+# [TigerOkHttp](http://ittiger.cn/2016/01/06/%E5%9F%BA%E4%BA%8EOkHttp%E7%9A%84%E5%B0%81%E8%A3%85%E5%BA%93TigerOkHttp%E7%9A%84%E4%BD%BF%E7%94%A8/)
 此框架是基于OkHttp的基础上进行封装的，其简化了OkHttp请求的写法，同时添加了一些其他的实用功能，使其更适用于具体的项目。
-不熟悉OkHttp用法的同学请参考我的文章[Android中OkHttp的使用](http://ittiger.cn/?p=300)
+不熟悉OkHttp用法的同学请参考我的文章[Android中OkHttp的使用](http://ittiger.cn/2016/01/05/Android%E4%B8%ADOkHttp%E7%9A%84%E4%BD%BF%E7%94%A8/)
 <br/>
-此框架的具体用法请参考我的文章[基于OkHttp的封装库TigerOkHttp的使用](http://ittiger.cn/?p=304)
+此框架的具体用法请参考我的文章[基于OkHttp的封装库TigerOkHttp的使用](http://ittiger.cn/2016/01/06/%E5%9F%BA%E4%BA%8EOkHttp%E7%9A%84%E5%B0%81%E8%A3%85%E5%BA%93TigerOkHttp%E7%9A%84%E4%BD%BF%E7%94%A8/)
 <br/><br/>
 
 该框架主要支持的特性包括如下几点：
